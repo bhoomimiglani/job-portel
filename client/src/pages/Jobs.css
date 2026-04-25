@@ -1,0 +1,96 @@
+.jobs-page { padding-bottom: 3rem; }
+
+.jobs-header {
+  background: linear-gradient(135deg, #1e3a8a, #2563eb);
+  color: white;
+  padding: 2.5rem 0;
+  margin-bottom: 2rem;
+}
+.jobs-header h1 { font-size: 1.75rem; font-weight: 700; margin-bottom: 1rem; }
+
+.jobs-search-bar { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+.search-input-wrap {
+  display: flex; align-items: center; gap: 0.5rem;
+  background: white; border-radius: var(--radius-sm);
+  padding: 0.6rem 1rem; flex: 1; min-width: 200px;
+}
+.search-input-wrap svg { color: var(--gray-400); flex-shrink: 0; }
+.search-input-wrap input { border: none; outline: none; width: 100%; font-size: 0.9rem; color: var(--gray-800); }
+
+.filter-toggle-btn {
+  display: flex; align-items: center; gap: 0.5rem;
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.3);
+  color: white; border-radius: var(--radius-sm);
+  padding: 0.6rem 1rem; font-size: 0.875rem; font-weight: 500;
+  position: relative;
+}
+.filter-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: #fbbf24; position: absolute; top: 6px; right: 6px;
+}
+
+.jobs-layout { display: grid; grid-template-columns: 260px 1fr; gap: 1.5rem; align-items: start; }
+
+/* Sidebar */
+.filters-sidebar {
+  background: white;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  position: sticky;
+  top: 80px;
+}
+
+.filters-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.25rem; }
+.filters-header h3 { font-size: 1rem; font-weight: 600; }
+.clear-filters {
+  display: flex; align-items: center; gap: 0.3rem;
+  font-size: 0.8rem; color: var(--danger); background: none; border: none;
+}
+
+.filter-group { margin-bottom: 1.25rem; padding-bottom: 1.25rem; border-bottom: 1px solid var(--gray-100); }
+.filter-group:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.filter-group > label { display: block; font-size: 0.8rem; font-weight: 600; color: var(--gray-700); margin-bottom: 0.6rem; text-transform: uppercase; letter-spacing: 0.05em; }
+.filter-group select, .filter-group input[type="number"] {
+  width: 100%; padding: 0.5rem 0.75rem;
+  border: 1px solid var(--gray-200); border-radius: var(--radius-sm);
+  font-size: 0.875rem; color: var(--gray-700); outline: none;
+}
+.filter-group select:focus, .filter-group input:focus { border-color: var(--primary); }
+
+.checkbox-label {
+  display: flex; align-items: center; gap: 0.5rem;
+  font-size: 0.875rem; color: var(--gray-600);
+  padding: 0.3rem 0; cursor: pointer;
+  text-transform: capitalize;
+}
+.checkbox-label input { accent-color: var(--primary); }
+
+/* Content */
+.jobs-count { font-size: 0.875rem; color: var(--gray-500); margin-bottom: 1rem; }
+
+.jobs-list { display: flex; flex-direction: column; gap: 0.875rem; }
+
+.jobs-loading { display: flex; flex-direction: column; gap: 0.875rem; }
+.job-skeleton {
+  height: 140px; background: var(--gray-100);
+  border-radius: var(--radius-md);
+  animation: pulse 1.5s ease-in-out infinite;
+}
+@keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.5; } }
+
+.no-jobs { text-align: center; padding: 3rem; color: var(--gray-500); }
+.no-jobs p { font-size: 1.1rem; margin-bottom: 1rem; }
+.btn-outline {
+  padding: 0.5rem 1.25rem;
+  border: 1px solid var(--primary); color: var(--primary);
+  border-radius: var(--radius-sm); background: none;
+  font-size: 0.875rem; font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .jobs-layout { grid-template-columns: 1fr; }
+  .filters-sidebar { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 200; border-radius: 0; overflow-y: auto; }
+  .filters-sidebar.open { display: block; }
+}
