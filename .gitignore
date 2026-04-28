@@ -6,6 +6,8 @@ client/node_modules/
 .env
 .env.local
 .env.production
+# Allow client build config
+!client/.env
 
 # Uploads (user files)
 uploads/
