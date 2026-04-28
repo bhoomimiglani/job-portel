@@ -17,16 +17,9 @@ const errorHandler = require('./middleware/errorHandler');
 const app = express();
 
 // CORS — allow both local dev and deployed frontend
-const allowedOrigins = [
-  process.env.CLIENT_URL || 'http://localhost:3000',
-  'http://localhost:3000',
-];
 app.use(cors({
-  origin: (origin, callback) => {
-    if (!origin || allowedOrigins.includes(origin)) return callback(null, true);
-    callback(new Error('Not allowed by CORS'));
-  },
-  credentials: true,
+  origin: true,
+  credentials: false,
 }));
 
 // Body parsers
