@@ -5,7 +5,7 @@ A full-featured job portal with role-based authentication (Job Seeker, Employer,
 ## 🚀 Quick Start
 
 **✅ READY TO USE** - Both servers are configured and running!
-
+- **live demo**:https://job-portel-ohpgmst05-bhoomimiglani1111-8919s-projects.vercel.app/
 - **Frontend**: http://localhost:3000 (React development server)
 - **Backend**: http://localhost:5000 (Express API server)
 - **Database**: MongoDB connected successfully
